@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=4" />
+  </head>
+  <body>
+    <div class="app">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header-top">
+          <div class="header-left">
+            <div class="logo">✓</div>
+            <div>
+              <h1>My Tasks</h1>
+              <span id="current-date" class="date-label"></span>
+            </div>
+          </div>
+          <div class="header-stats">
+            <div class="hstat">
+              <span id="stat-total" class="hstat-num">0</span>
+              <span class="hstat-lbl">Total</span>
+            </div>
+            <div class="hstat active">
+              <span id="stat-active" class="hstat-num">0</span>
+              <span class="hstat-lbl">Active</span>
+            </div>
+            <div class="hstat done">
+              <span id="stat-done" class="hstat-num">0</span>
+              <span class="hstat-lbl">Done</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-fill"></div>
+        </div>
+
+        <!-- Add task input -->
+        <div class="add-row">
+          <input type="text" id="task-input" placeholder="Add a new task and press Enter…" autocomplete="off" />
+          <button id="add-btn" aria-label="Add task">
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div id="add-error" class="add-error hidden"></div>
+      </header>
+
+      <!-- Tabs + Clear -->
+      <div class="toolbar">
+        <div class="tabs">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="active">Active</button>
+          <button class="tab" data-filter="completed">Completed</button>
+          <button class="tab" data-filter="recent">Recent</button>
+        </div>
+        <button id="clear-btn" class="clear-btn">Clear done</button>
+      </div>
+
+      <!-- Task list -->
+      <main class="task-area">
+        <ul id="task-list"></ul>
+        <div id="empty-state" class="empty-state hidden">
+          <div class="empty-icon">📋</div>
+          <p id="empty-text">No tasks yet. Add one above!</p>
+        </div>
+      </main>
+
+    </div>
+
+    <script src="script.js?v=4"></script>
+  </body>
+</html>
